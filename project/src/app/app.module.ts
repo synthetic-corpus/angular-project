@@ -5,12 +5,14 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { RecipelistComponent } from './recipelist/recipelist.component';
-import { RecipeitemComponent } from './recipeitem/recipeitem.component';
+import { RecipelistComponent} from './recipe/recipelist/recipelist.component';
+import { RecipeitemComponent} from './recipe/recipeitem/recipeitem.component';
 import { RecipeComponent } from './recipe/recipe.component';
-import { ShoppinglistComponent } from './shoppinglist/shoppinglist.component';
-import { ShoppingeditComponent } from './shoppingedit/shoppingedit.component';
+import { ShoppinglistComponent} from './shopping/shoppinglist/shoppinglist.component';
+import { ShoppingeditComponent } from  './shopping/shoppingedit/shoppingedit.component'
 import { RecipedetailsComponent } from './recipe/recipedetails/recipedetails.component';
+import { RecipeboxComponent } from './recipebox/recipebox.component';
+import { ShoppingboxComponent } from './shopping/shoppingbox/shoppingbox.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { RecipedetailsComponent } from './recipe/recipedetails/recipedetails.com
     RecipeComponent,
     ShoppinglistComponent,
     ShoppingeditComponent,
-    RecipedetailsComponent
+    RecipedetailsComponent,
+    RecipeboxComponent,
+    ShoppingboxComponent
   ],
   imports: [
     BrowserModule,
