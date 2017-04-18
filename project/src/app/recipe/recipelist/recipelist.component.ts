@@ -7,7 +7,7 @@ import { Recipe } from '../recipe.model';
 })
 export class RecipelistComponent implements OnInit {
   recipes: Recipe[] = [
-    new Recipe('A test Stew','This is only a test','http://www.clipartkid.com/images/523/plate-of-chocolate-chip-cookies-clip-art-WuAWqU-clipart.jpg')
+    new Recipe('A test Stew','This is only a test','http://maxpixel.freegreatpicture.com/static/photo/2x/Plate-Cookies-Chocolate-Cookies-Confectionery-1103792.jpg')
   ];
 
   constructor() { }

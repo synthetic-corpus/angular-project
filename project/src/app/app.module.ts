@@ -25,7 +25,8 @@ import { ShoppingboxComponent } from './shopping/shoppingbox/shoppingbox.compone
     ShoppingeditComponent,
     RecipedetailsComponent,
     RecipeboxComponent,
-    ShoppingboxComponent
+    ShoppingboxComponent,
+
   ],
   imports: [
     BrowserModule,
