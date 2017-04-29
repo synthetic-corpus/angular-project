@@ -1,9 +1,9 @@
-<app-header></app-header>
+<app-header (selectedPage) = "loadThis($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipebox></app-recipebox>
-      <app-shoppinglist></app-shoppinglist>
+      <app-recipelist *ngIf="loadedPane === 'recipelist'"></app-recipelist>
+      <app-shoppinglist *ngIf="loadedPane === 'shoppinglist'"></app-shoppinglist>
     </div>
   </div>
 </div>
