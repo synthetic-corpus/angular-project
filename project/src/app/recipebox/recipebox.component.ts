@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, DoCheck } from '@angular/core';
+import { Recipe } from '../recipe/recipe.model';
 @Component({
   selector: 'app-recipebox',
   templateUrl: './recipebox.component.html',
   styleUrls: ['./recipebox.component.css']
 })
 export class RecipeboxComponent implements OnInit {
+  recipe;
+
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toDetails(event) {
+    this.recipe = event;
   }
 
 }
