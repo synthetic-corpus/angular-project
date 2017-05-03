@@ -1,8 +1,8 @@
 <div class="row">
   <div class="col-md-5">
-    <app-recipelist (listSays) = "displayDetails($event)"></app-recipelist>
+    <app-recipelist (listSays) = "onDetails($event)"></app-recipelist>
   </div>
   <div class="col-md-7">
-    <app-recipedetails></app-recipedetails>
+    <app-recipedetails [toDetails] = "recipe"></app-recipedetails>
   </div>
 </div>

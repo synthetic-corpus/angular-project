@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, DoCheck } from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -7,11 +7,15 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipedetails.component.css']
 })
 export class RecipedetailsComponent implements OnInit {
-  @Input('toDetails') details: Recipe;
+  @Input('toDetails') details;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngDoCheck(){
+    console.log('app-details is ',this.details);
   }
 
 }

@@ -14,6 +14,7 @@ export class RecipelistComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.message.emit(Recipe[0]);
   }
 
   passThis(recipeObject){

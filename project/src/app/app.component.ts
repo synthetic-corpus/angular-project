@@ -6,10 +6,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @Input() loadedPane = "";
+  loadedPane = "";
   title = 'app works!';
   loadThis(string){
     // Function responds to data emitted from the header component.
     this.loadedPane = string;
+    console.log(this.loadedPane);
   }
 }

@@ -14,8 +14,9 @@ export class RecipeboxComponent implements OnInit {
   ngOnInit() {
   }
 
-  toDetails(event) {
+  onDetails(event) {
     this.recipe = event;
+    console.log(this.recipe);
   }
 
 }
