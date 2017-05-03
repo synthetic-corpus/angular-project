@@ -15,7 +15,7 @@ export class RecipedetailsComponent implements OnInit {
   }
 
   ngDoCheck(){
-    console.log('app-details is ',this.details);
+    
   }
 
 }

@@ -13,9 +13,11 @@ import { ShoppingeditComponent } from  './shopping/shoppingedit/shoppingedit.com
 import { RecipedetailsComponent } from './recipe/recipedetails/recipedetails.component';
 import { RecipeboxComponent } from './recipebox/recipebox.component';
 import { ShoppingboxComponent } from './shopping/shoppingbox/shoppingbox.component';
-
+// Custom directives
+import { DropdownDirective } from './shared/dropdown.directive';
 @NgModule({
   declarations: [
+    DropdownDirective,
     AppComponent,
     HeaderComponent,
     RecipelistComponent,
