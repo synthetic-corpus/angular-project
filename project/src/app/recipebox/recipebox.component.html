@@ -3,6 +3,6 @@
     <app-recipelist (listSays) = "onDetails($event)"></app-recipelist>
   </div>
   <div class="col-md-7">
-    <app-recipedetails [toDetails] = "recipe"></app-recipedetails>
+    <app-recipedetails *ngIf = "recipe != undefined" [toDetails] = "recipe"></app-recipedetails>
   </div>
 </div>
