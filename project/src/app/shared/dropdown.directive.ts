@@ -6,7 +6,7 @@ import { Directive, ElementRef, Renderer2, OnInit, HostListener } from '@angular
 
 export class DropdownDirective implements OnInit {
   //state = 'collapsed';
-  constructor(private element: ElementRef, renderer: Renderer2){
+  constructor(private element: ElementRef, private renderer: Renderer2){
     // Element refers to the html element this is attached to.
     // ElementRef is a class.
   }
@@ -19,10 +19,10 @@ export class DropdownDirective implements OnInit {
   @HostListener('click') enterClick(eventData: Event){
     if (this.status === 'collapsed'){
       console.log('Enter Click');
-      this.status = 'opened';
+      this.renderer.addClass(this.element.nativeElement, "open");
     }else{
       console.log('Exit Click');
-      this.status = 'collapsed';
+      this.renderer.removeClass(this.element.nativeElement, "open");
     }
   }
 
