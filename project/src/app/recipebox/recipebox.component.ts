@@ -8,7 +8,6 @@ import { Recipe } from '../recipe/recipe.model';
 export class RecipeboxComponent implements OnInit {
   recipe;
 
-
   constructor() { }
 
   ngOnInit() {
