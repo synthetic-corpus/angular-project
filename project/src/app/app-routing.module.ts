@@ -14,7 +14,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Define the Routes
 const appRouteZ: Routes =[
-  {path: '', redirectTo:'/recipes', pathMatch: 'full'},
+  {path: '', redirectTo:'/recipebox', pathMatch: 'full'},
   {path: 'recipebox', component: RecipeboxComponent },
   {path: 'shoppinglist', component: ShoppinglistComponent}
 ]
