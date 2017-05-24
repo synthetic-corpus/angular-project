@@ -15,6 +15,10 @@ import { RecipeboxComponent } from './recipebox/recipebox.component';
 import { ShoppingboxComponent } from './shopping/shoppingbox/shoppingbox.component';
 // Custom directives
 import { DropdownDirective } from './shared/dropdown.directive';
+
+// Router related
+import { AppRoutingModule } from './app-routing.module';
+
 @NgModule({
   declarations: [
     DropdownDirective,
@@ -33,7 +37,8 @@ import { DropdownDirective } from './shared/dropdown.directive';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
