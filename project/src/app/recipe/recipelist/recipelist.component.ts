@@ -17,10 +17,11 @@ export class RecipelistComponent implements OnInit {
   @Output('listSays') message = new EventEmitter<Recipe>();
 
   constructor(private recipeList: RecipeService ) { }
-  recipes = this.recipeList.recipes;
+  recipes: Recipe [];
 
   ngOnInit() {
-    this.message.emit(Recipe[0]);
+    //this.message.emit(Recipe[0]);
+    this.recipes = this.recipeList.getRecipes();
   }
 
   passThis(recipeObject){
