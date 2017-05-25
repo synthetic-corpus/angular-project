@@ -15,6 +15,7 @@ import { RecipeboxComponent } from './recipebox/recipebox.component';
 import { ShoppingboxComponent } from './shopping/shoppingbox/shoppingbox.component';
 // Custom directives
 import { DropdownDirective } from './shared/dropdown.directive';
+import { RecipeService } from './recipe/recipe.service';
 
 // Router related
 import { AppRoutingModule } from './app-routing.module';
@@ -42,7 +43,7 @@ import { RecipedefaultComponent } from './recipe/recipedefault/recipedefault.com
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

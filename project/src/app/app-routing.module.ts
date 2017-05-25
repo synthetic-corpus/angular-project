@@ -18,6 +18,7 @@ const appRouteZ: Routes =[
   {path: '', redirectTo:'/recipebox', pathMatch: 'full'},
   {path: 'recipebox', component: RecipeboxComponent, children:[
     {path:'', component: RecipedefaultComponent },
+    {path:':id', component: RecipedetailsComponent}
   ] },
   {path: 'shoppinglist', component: ShoppinglistComponent}
 ]
