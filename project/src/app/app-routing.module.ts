@@ -9,13 +9,16 @@ import { ShoppingeditComponent } from  './shopping/shoppingedit/shoppingedit.com
 import { RecipedetailsComponent } from './recipe/recipedetails/recipedetails.component';
 import { RecipeboxComponent } from './recipebox/recipebox.component';
 import { ShoppingboxComponent } from './shopping/shoppingbox/shoppingbox.component';
+import { RecipedefaultComponent } from './recipe/recipedefault/recipedefault.component';
 // Import the things used for Routing
 import { Routes, RouterModule } from '@angular/router';
 
 // Define the Routes
 const appRouteZ: Routes =[
   {path: '', redirectTo:'/recipebox', pathMatch: 'full'},
-  {path: 'recipebox', component: RecipeboxComponent },
+  {path: 'recipebox', component: RecipeboxComponent, children:[
+    {path:'', component: RecipedefaultComponent },
+  ] },
   {path: 'shoppinglist', component: ShoppinglistComponent}
 ]
 

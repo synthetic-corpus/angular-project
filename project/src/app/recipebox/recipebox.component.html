@@ -4,5 +4,6 @@
   </div>
   <div class="col-md-7">
     <app-recipedetails *ngIf = "recipe != undefined" [toDetails] = "recipe"></app-recipedetails>
+    <router-outlet></router-outlet>
   </div>
 </div>
