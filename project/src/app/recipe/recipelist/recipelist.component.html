@@ -7,6 +7,11 @@
   <div class="col-xs-12">
     <app-recipeitem *ngFor="let recipe of recipes"
     [recipe]="recipe"
-    (recipeItemSays)="passThis($event)"></app-recipeitem>
+    [routerLink]="[recipe.indexOf()]"
+    >
+    </app-recipeitem>
+    <!--<app-recipeitem *ngFor="let recipe of recipes"
+
+    (recipeItemSays)="passThis($event)"></app-recipeitem> -->
   </div>
 </div>
