@@ -21,6 +21,7 @@ import { ShoppingListService } from './shopping/shoppinglist/shopping-list.servi
 // Router related
 import { AppRoutingModule } from './app-routing.module';
 import { RecipedefaultComponent } from './recipe/recipedefault/recipedefault.component';
+import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { RecipedefaultComponent } from './recipe/recipedefault/recipedefault.com
     RecipeboxComponent,
     ShoppingboxComponent,
     RecipedefaultComponent,
+    RecipeEditComponent,
 
   ],
   imports: [

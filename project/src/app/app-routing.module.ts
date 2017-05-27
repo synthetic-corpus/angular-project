@@ -12,13 +12,16 @@ import { ShoppingboxComponent } from './shopping/shoppingbox/shoppingbox.compone
 import { RecipedefaultComponent } from './recipe/recipedefault/recipedefault.component';
 // Import the things used for Routing
 import { Routes, RouterModule } from '@angular/router';
+import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
 
 // Define the Routes
 const appRouteZ: Routes =[
   {path: '', redirectTo:'/recipebox', pathMatch: 'full'},
   {path: 'recipebox', component: RecipeboxComponent, children:[
     {path:'', component: RecipedefaultComponent },
-    {path:':id', component: RecipedetailsComponent}
+    {path: 'new', component: RecipeEditComponent },
+    {path:':id', component: RecipedetailsComponent},
+    {path: ':id/edit', component: RecipeEditComponent }
   ] },
   {path: 'shoppinglist', component: ShoppinglistComponent}
 ]
