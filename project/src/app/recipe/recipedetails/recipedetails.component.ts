@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, DoCheck } from '@angular/core';
+import { Component, OnInit,} from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { ShoppingListService } from '../../shopping/shoppinglist/shopping-list.service';
 import { RecipeService } from '../recipe.service';
@@ -11,22 +11,23 @@ import { Ingredient } from '../../shared/ingredient.model';
   styleUrls: ['./recipedetails.component.css']
 })
 export class RecipedetailsComponent implements OnInit {
-  // Old way. With Router iinput stead.
-  //@Input('toDetails') recipe: Recipe;
   recipe: Recipe;
+  id: number;
 
   constructor(private ShoppingListService: ShoppingListService,
               private recipeService: RecipeService,
               private currentRoute: ActivatedRoute ) { }
 
   ngOnInit() {
-    const id = +this.currentRoute.snapshot.params['id'];
-    this.recipe = this.recipeService.getRecipes()[id];
+    const id = +this.currentRoute.params.
+      subscribe(
+        (params: Params)=> {
+          this.id = +params['id'];
+          this.recipe = this.recipeService.getRecipe(this.id);
+        })
+
   }
 
-  ngDoCheck(){
-
-  }
 
   onAddToSL(){
     /* Loop Solution. Untested. Writes many emits
