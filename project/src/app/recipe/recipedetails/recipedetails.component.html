@@ -16,7 +16,7 @@
       </button>
       <ul class="dropdown-menu">
         <li><a (click)="onAddToSL()" style="cursor: pointer;">To shopping List</a></li>
-        <li><a>Edit Recipe</a></li>
+        <li><a [routerLink]="['/recipebox',id,'edit']">Edit Recipe</a></li>
         <li><a>Delete Recipe</a></li>
       </ul>
     </div>

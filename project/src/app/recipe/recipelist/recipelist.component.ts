@@ -10,12 +10,17 @@ import { Router } from '@angular/router';
 })
 export class RecipelistComponent implements OnInit {
 
-  constructor(private recipeList: RecipeService ) { }
+  constructor(private recipeList: RecipeService,
+              private router: Router ) { }
   recipes: Recipe [];
 
   ngOnInit() {
-    
+
     this.recipes = this.recipeList.getRecipes();
+  }
+
+  onNewRecipe(){
+    this.router.navigate(['/recipebox','new'])
   }
 
 }
