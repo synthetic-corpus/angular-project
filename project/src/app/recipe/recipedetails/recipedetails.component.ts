@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, DoCheck } from '@angular/core';
 import { Recipe } from '../recipe.model';
+import { ShoppingListService } from '../../shopping/shoppinglist/shopping-list.service';
 
 @Component({
   selector: 'app-recipedetails',
@@ -7,15 +8,23 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipedetails.component.css']
 })
 export class RecipedetailsComponent implements OnInit {
-  @Input('toDetails') details;
+  @Input('toDetails') recipe: Recipe;
 
-  constructor() { }
+  constructor(private ShoppingListService: ShoppingListService ) { }
 
   ngOnInit() {
   }
 
   ngDoCheck(){
-    
+
+  }
+
+  onAddToSL(){
+    var toAdd = this.recipe.ingredients;
+    toAdd.forEach((object)=>{
+      this.ShoppingListService.addThis(object);
+    })
+
   }
 
 }
