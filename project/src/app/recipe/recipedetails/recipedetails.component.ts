@@ -1,6 +1,9 @@
 import { Component, OnInit, Input, DoCheck } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { ShoppingListService } from '../../shopping/shoppinglist/shopping-list.service';
+import { RecipeService } from '../recipe.service';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Ingredient } from '../../shared/ingredient.model';
 
 @Component({
   selector: 'app-recipedetails',
@@ -8,11 +11,17 @@ import { ShoppingListService } from '../../shopping/shoppinglist/shopping-list.s
   styleUrls: ['./recipedetails.component.css']
 })
 export class RecipedetailsComponent implements OnInit {
-  @Input('toDetails') recipe: Recipe;
+  // Old way. With Router iinput stead.
+  //@Input('toDetails') recipe: Recipe;
+  recipe: Recipe;
 
-  constructor(private ShoppingListService: ShoppingListService ) { }
+  constructor(private ShoppingListService: ShoppingListService,
+              private recipeService: RecipeService,
+              private currentRoute: ActivatedRoute ) { }
 
   ngOnInit() {
+    const id = +this.currentRoute.snapshot.params['id'];
+    this.recipe = this.recipeService.getRecipes()[id];
   }
 
   ngDoCheck(){
