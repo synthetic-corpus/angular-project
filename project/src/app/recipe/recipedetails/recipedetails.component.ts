@@ -20,10 +20,14 @@ export class RecipedetailsComponent implements OnInit {
   }
 
   onAddToSL(){
+    /* Loop Solution. Untested. Writes many emits
     var toAdd = this.recipe.ingredients;
     toAdd.forEach((object)=>{
       this.ShoppingListService.addThis(object);
-    })
+    }) */
+    // Push and array instead
+    var toAdd = this.recipe.ingredients;
+    this.ShoppingListService.addThese(toAdd);
 
   }
 
