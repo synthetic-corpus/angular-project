@@ -55,6 +55,7 @@ export class ShoppingEditComponent implements OnInit {
     }else{
       this.slService.addIngredient(newIngredient);
     }
+    this.onClear(Form);
 
   }
 
@@ -63,8 +64,17 @@ export class ShoppingEditComponent implements OnInit {
     this.editMode = false;
   }
 
+  onDelete(){
+    var index = this.editedItemIndex;
+    this.slService.removeIngredient(index);
+    this.onClear(this.slForm);
+
+
+  }
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
+
   }
 
 }
