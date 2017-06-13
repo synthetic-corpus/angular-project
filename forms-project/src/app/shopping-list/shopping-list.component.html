@@ -3,10 +3,13 @@
     <app-shopping-edit></app-shopping-edit>
     <hr>
     <ul class="list-group">
+      <!-- Add a Click listener to each iteration here.
+        'let i = index' refers to the index of the current iteration.-->
       <a
         class="list-group-item"
         style="cursor: pointer"
-        *ngFor="let ingredient of ingredients"
+        *ngFor="let ingredient of ingredients; let i = index"
+        (click) = "onEditItem()"
       >
         {{ ingredient.name }} ({{ ingredient.amount }})
       </a>
