@@ -17,10 +17,12 @@ import { Subscription } from 'rxjs/subscription';
   styleUrls: ['./shopping-edit.component.css']
 })
 export class ShoppingEditComponent implements OnInit {
-
+  // Accesses a variable based on its local reference in HTML.
+  @ViewChild('x') slForm: NgForm;
   subscription: Subscription;
   editMode = false;
   editedItemIndex: number;
+  editedItem: Ingredient;
   constructor(private slService: ShoppingListService) { }
 
   ngOnInit() {
@@ -32,6 +34,13 @@ export class ShoppingEditComponent implements OnInit {
         (index: number) => {
             this.editedItemIndex = index;
             this.editMode = true;
+            this.editedItem = this.slService.getIngredient(index);
+            // Final thing here initiates the form based on what is
+            // already in the Ingredient object "editedItem."
+            this.slForm.setValue({
+              nameInput: this.editedItem.name,
+              amountInput: this.editedItem.amount
+            })
         }
       );
   }
