@@ -25,9 +25,9 @@
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <button class="btn btn-success" [disabled]="!xForm.valid" type="submit">Add</button>
+          <button class="btn btn-success" [disabled]="!x.valid" type="submit">Add</button>
           <button class="btn btn-danger" type="button">Delete</button>
-          <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
+          <button class="btn btn-primary" type="button" (click)="onClear(x)">Clear</button>
         </div>
       </div>
     </form>
