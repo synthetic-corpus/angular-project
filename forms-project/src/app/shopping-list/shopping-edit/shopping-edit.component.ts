@@ -17,7 +17,7 @@ import { ShoppingListService } from '../shopping-list.service';
 export class ShoppingEditComponent implements OnInit {
   /*@ViewChild('nameInput') nameInputRef: ElementRef;
   @ViewChild('amountInput') amountInputRef: ElementRef;*/
-  @ViewChild('x') xForm:NgForm;
+  @ViewChild('x') xForm: NgForm;
   // nameInput: string;
   // amountInput: number;
 
@@ -33,6 +33,10 @@ export class ShoppingEditComponent implements OnInit {
     const newIngredient = new Ingredient(ingName, ingAmount);
     console.log(newIngredient);
     this.slService.addIngredient(newIngredient);
+  }
+
+  onClear(){
+    this.xForm.reset();
   }
 
 }
