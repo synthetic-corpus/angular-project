@@ -1,0 +1,5 @@
+/* Puts a red border around bad input. */
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px dashed red;
+}
