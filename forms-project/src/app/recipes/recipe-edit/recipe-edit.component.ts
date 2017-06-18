@@ -104,4 +104,9 @@ export class RecipeEditComponent implements OnInit {
     this.myRouter.navigate(["/recipes"]);
   }
 
+  onRemoveIngredient(index: number){
+    (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
+
+  }
+
 }
