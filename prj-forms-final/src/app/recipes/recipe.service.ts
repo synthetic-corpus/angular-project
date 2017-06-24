@@ -67,4 +67,16 @@ export class RecipeService {
         (error) => console.log(error)
       );
   }
+
+  fetchData(){
+    this.httpGo.retreiveThis()
+      .subscribe(
+        (result) => {console.log(result);
+                    // If an error, should break and not overwrite this line.
+                    this.recipes = result;
+                    this.recipesChanged.next(this.recipes.slice());
+                  }
+
+      )
+  }
 }
