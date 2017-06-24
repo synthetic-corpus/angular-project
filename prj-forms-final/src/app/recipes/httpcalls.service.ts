@@ -8,7 +8,7 @@ export class HttpcallsService {
   constructor(private http: Http) { }
 
   storeThis(recipes: Recipe[]){
-    return this.http.post('https://udemy-project-49359.firebaseio.com/data.json', recipes);
+    return this.http.put('https://udemy-project-49359.firebaseio.com/data.json', recipes);
   }
 
 }
