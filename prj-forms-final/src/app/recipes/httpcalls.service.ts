@@ -17,7 +17,15 @@ export class HttpcallsService {
     return this.http.get('https://udemy-project-49359.firebaseio.com/data.json')
       .map(
         (response: Response) => {
-          return response.json();
+          const recipes = response.json();
+          for (let r of recipes){
+            // Is possible to return an object without the ingredients array.
+            // If not there, this will add an empty ingredients array.
+            if (!r['ingredients']){
+              r['ingredients'] = [];
+            }
+          }
+          return recipes;
         },
       )
       .catch(
