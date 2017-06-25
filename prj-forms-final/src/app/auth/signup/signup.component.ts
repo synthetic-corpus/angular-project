@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+// import everythin from firebase and call it firebaseio
+
 
 @Component({
   selector: 'app-signup',
@@ -15,7 +17,8 @@ export class SignupComponent implements OnInit {
   }
 
   onSignUp(form: NgForm){
-    console.log(form);
+    const email = form.value.email;
+    const password = form.value.password;
   }
 
 }
