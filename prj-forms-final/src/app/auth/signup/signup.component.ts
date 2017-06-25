@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-// import everythin from firebase and call it firebaseio
+import { AuthServiceService } from '../auth-service.service';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 export class SignupComponent implements OnInit {
 
 
-  constructor() { }
+  constructor( private authService: AuthServiceService ) { }
 
   ngOnInit() {
   }
@@ -19,6 +19,7 @@ export class SignupComponent implements OnInit {
   onSignUp(form: NgForm){
     const email = form.value.email;
     const password = form.value.password;
+    this.authService.signUpUser(email,password);
   }
 
 }
