@@ -22,4 +22,10 @@ export class AuthServiceService {
         error => console.log(error)
       )
   }
+
+  getToken(){
+    /* Uses Firebase SDK... Returns a promise. This is an async request.
+      Can be a problem, I'm sure. */
+      return firebase.auth().currentUser.getToken();
+  }
 }
