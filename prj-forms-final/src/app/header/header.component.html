@@ -15,7 +15,8 @@
         <li><a style="cursor: pointer;" *ngIf="!this.authService.isAuthenticated()" routerLink='/login'>Login</a></li>
         <li><a style="cursor: pointer;" *ngIf="this.authService.isAuthenticated()" (click)="onLogout()">Logout</a></li>
         <li class="dropdown" appDropdown>
-          <a style="cursor: pointer;" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
+          <a style="cursor: pointer;" class="dropdown-toggle" role="button"
+            *ngIf="this.authService.isAuthenticated()">Manage <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a style="cursor: pointer;" (click)="onSaveRecipes()">Save Data</a></li>
             <li><a style="cursor: pointer;" (click)="onLoadRecipes()">Fetch Data</a></li>
