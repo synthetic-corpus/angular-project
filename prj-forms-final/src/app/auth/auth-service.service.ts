@@ -5,6 +5,7 @@ import * as firebase from 'firebase';
 export class AuthServiceService {
 
   constructor() { }
+  token: string;
 
   signUpUser(email: string, password: string){
     firebase.auth().createUserWithEmailAndPassword(email,password)
@@ -16,7 +17,12 @@ export class AuthServiceService {
   loginInUser(email: string, password:string){
     firebase.auth().signInWithEmailAndPassword(email,password)
       .then(
-        response => console.log(response)
+        response => {
+          firebase.auth().currentUser.getToken()
+            .then(
+              (token:string) => this.token = token
+            )
+        }
       )
       .catch(
         error => console.log(error)
@@ -26,6 +32,23 @@ export class AuthServiceService {
   getToken(){
     /* Uses Firebase SDK... Returns a promise. This is an async request.
       Can be a problem, I'm sure. */
-      return firebase.auth().currentUser.getToken();
+      firebase.auth().currentUser.getToken()
+        .then(
+          (token:string) => this.token = token
+        );
+    return this.token;
+  }
+
+  isAuthenticated() {
+    if (this.token != null){
+      return true;
+    }else
+    {
+      return false;
+    }
+  }
+
+  onLogOut () {
+    this.token = null;
   }
 }

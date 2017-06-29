@@ -16,7 +16,9 @@ export class HttpcallsService {
   }
 
   retreiveThis(){
-    return this.http.get('https://udemy-project-49359.firebaseio.com/data.json')
+    const token = this.authService.getToken();
+    
+    return this.http.get('https://udemy-project-49359.firebaseio.com/data.json?auth='+token)
       .map(
         (response: Response) => {
           const recipes = response.json();

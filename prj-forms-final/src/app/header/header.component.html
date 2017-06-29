@@ -12,7 +12,8 @@
 
       <ul class="nav navbar-nav navbar-right">
         <li><a style="cursor: pointer;" routerLink='/sign-up'>Sign Up</a></li>
-        <li><a style="cursor: pointer;" routerLink='/login'>Login</a></li>
+        <li><a style="cursor: pointer;" *ngIf="!this.authService.isAuthenticated()" routerLink='/login'>Login</a></li>
+        <li><a style="cursor: pointer;" *ngIf="this.authService.isAuthenticated()" (click)="onLogout()">Logout</a></li>
         <li class="dropdown" appDropdown>
           <a style="cursor: pointer;" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
           <ul class="dropdown-menu">
