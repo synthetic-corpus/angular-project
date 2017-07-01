@@ -21,6 +21,7 @@ import { HttpcallsService } from './recipes/httpcalls.service';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthServiceService } from './auth/auth-service.service';
+import { AuthGuardService } from './auth/auth-guard.service';
 
 
 @NgModule({
@@ -46,7 +47,7 @@ import { AuthServiceService } from './auth/auth-service.service';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ShoppingListService, RecipeService, HttpcallsService, AuthServiceService ],
+  providers: [ShoppingListService, RecipeService, HttpcallsService, AuthServiceService, AuthGuardService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
