@@ -6,24 +6,23 @@ import { CommonModule } from '@angular/common';
 
 // Must import just as any other module.
 import { RecipesComponent } from './recipes.component';
-import { RecipesStartComponent } from './recipe-start/recipe-start.component';
-import { RecipesListComponent } from './recipe-list/recipe-list.component';
+import { RecipeStartComponent } from './recipe-start/recipe-start.component';
+import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { RecipeItemComponent } from './recipe-list/recipe-item/recipe-item.component';
-import { DropdownDirective } from './shared/dropdown.directive';
+import { DropdownDirective } from '../shared/dropdown.directive';
 
 // Takes this TS class and lets Angular know its a module
 @NgModule({
   // What Declarations go here?
   declarations:[
     RecipesComponent,
-    RecipesStartComponent,
-    RecipesListComponent,
+    RecipeStartComponent,
+    RecipeListComponent,
     RecipeEditComponent,
     RecipeDetailComponent,
-    RecipeItemComponent,
-    DropdownDirective
+    RecipeItemComponent
   ],
   // Are there services, or Modules which only this module will use?
   imports: [
