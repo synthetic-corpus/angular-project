@@ -11,7 +11,7 @@ import { HeaderComponent } from './header/header.component';
 // import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { DropdownDirective } from './shared/dropdown.directive';
+// import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
 // import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
@@ -22,6 +22,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
+import { SharedModule } from './shared/shared.module';
 
 // First Module to be imported
 import { RecipesModule } from './recipes/recipes.module';
@@ -36,7 +37,7 @@ import { RecipesModule } from './recipes/recipes.module';
     // RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    DropdownDirective,
+    // DropdownDirective,
     // RecipeStartComponent,
     // RecipeEditComponent,
     SignupComponent,
@@ -48,7 +49,8 @@ import { RecipesModule } from './recipes/recipes.module';
     // ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
-    RecipesModule
+    RecipesModule,
+    SharedModule
   ],
   providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
