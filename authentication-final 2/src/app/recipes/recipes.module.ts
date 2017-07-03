@@ -4,6 +4,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 // This import is not required, yet if you want to use *ngFor or such...
 import { CommonModule } from '@angular/common';
 
+// Our customized routing module that matches with this module
+import { RecipesRoutingModule } from './recipes-routing.module';
+
 // Must import just as any other module.
 import { RecipesComponent } from './recipes.component';
 import { RecipeStartComponent } from './recipe-start/recipe-start.component';
@@ -27,7 +30,8 @@ import { DropdownDirective } from '../shared/dropdown.directive';
   // Are there services, or Modules which only this module will use?
   imports: [
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    RecipesRoutingModule
   ],
   providers: [
 
