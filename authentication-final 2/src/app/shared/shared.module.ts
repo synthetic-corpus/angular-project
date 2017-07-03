@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 
 // The directive we wish to shared
 import { DropdownDirective } from './dropdown.directive';
+import { ShoppingListService } from './shopping-list.service';
 
 @NgModule({
   declarations: [
